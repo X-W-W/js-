@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>简历</title>
+		<link rel="stylesheet" href="css/style_3.css" id="style"/>
+	</head>
+	<body>
+		<h1 id="title">简历<span><input type="button" value="你好~" id="Hello"/></span></h1>
+		<select id="select">
+			<option value="1">样式一</option>
+			<option value="2">样式二</option>
+			<option value="3">样式三</option>
+		</select>
+		<div id="basic-info">
+			<h2>基本信息</h2>
+			<p><strong>姓名</strong>&nbsp;&nbsp;张三</p>
+			<p><strong>性别</strong>&nbsp;&nbsp;男</p>
+			<p><strong>应聘职位</strong>&nbsp;&nbsp;Web前端工程师</p>
+		</div >
+		<div id="contact">
+			<h2>联系方式</h2>
+			<p><strong>手机</strong>&nbsp;&nbsp;13232154567</p>
+			<p><strong>Email</strong>&nbsp;&nbsp;<a href="joinefe@baidu.com">joinefe@baidu.com</a></p>
+			<p><strong>个人主页</strong>&nbsp;&nbsp;<a href="https://github.com/">Github</a></p>
+		</div>
+		<div id="skills">
+			<h2>能力描述</h2>
+			<h4>技术能力</h4>
+			<p>熟练掌握HTML，CSS，JavaScript</p>
+			<h4>综合能力</h4>
+			<p>良好的沟通，主动积极，努力勤奋</p>
+		</div>
+		<div id="education">
+			<h2>教育经历</h2>
+			<h4>本科</h4>
+			<p>百度前端技术学院小薇学院</p>
+			<h4>研究生</h4>
+			<p>百度前端技术学院大斌学院</p>
+		</div>
+		<div id="experience">
+			<h2>项目经历</h2>
+			<h4>小度小度</h4>
+			<p>作为前端工程师角色参与了ABC组件的开发</p>
+			<h4>SAN Doc</h4>
+			<p>作为文档工程师参与了SAN Doc编写</p>
+		</div>
+		<script>
+			document.getElementById("Hello").onclick=function(){
+				var mydate=new Date();
+				var h=mydate.getHours()+1;
+				if(h>=6 && h<=12)
+					alert("早上好")
+				else if(h>12 && h<=16)
+					alert("下午好")
+				else 
+					alert("晚上好")
+			}
+			var Style=document.getElementById("style")
+			document.getElementById("select").onchange=function(){
+				var num=document.getElementById("select").value
+				if(num==1)
+				Style.href="css/style_1.css"
+				if(num==2)
+				Style.href="css/style_2.css"
+				if(num==3)
+				Style.href="css/style_3.css"
+			}
+		</script>
+	</body>
+</html>

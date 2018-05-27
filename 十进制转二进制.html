@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+    <input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
+    <button id="trans-btn">转化为二进制</button>
+    <p id="result">运算结果</p>
+    <script>
+    	var dec_num,bin_num="",n,i;
+    	document.getElementById("trans-btn").onclick=function(){
+    		dec_num=parseFloat(document.getElementById("dec-number").value);
+    		n=parseInt(document.getElementById("bin-bit").value);
+    		dec2bin(dec_num,n);
+    		bin_num="";
+    	}
+		function dec2bin(decNumber,bit) {
+			if(decNumber<0){
+				alert("please input a right number")
+				return -1;
+			}
+			if(Number.isInteger(decNumber)===false){
+				alert("please input a right number")
+				return -1;
+			}
+			var arr=new Array();
+			for(i=0;decNumber>=1;i++){
+				arr[i]=decNumber%2;
+				decNumber=Math.floor(decNumber/2);
+			}
+			var a=arr.length
+			if(bit<a)
+			{
+				for(i=a-1;i>=0;i--){
+					arr[i]=arr[i].toString()
+					bin_num+=arr[i];
+				}
+				console.log("位数最少为"+a)
+				document.getElementById("result").innerText=bin_num
+			}
+			else
+			{
+				for(i=bit-1;i>a-1;i--)
+					arr[i]=0;
+				for(i=bit-1;i>=0;i--){
+					arr[i]=arr[i].toString()
+					bin_num+=arr[i];
+				}
+				document.getElementById("result").innerText=bin_num	
+			}
+			
+		}
+
+// 实现党点击转化按钮时，将输入的十进制数字转化为二进制，并显示在result的p标签内
+// Some coding
+
+    </script>
+</body>
+</html>
